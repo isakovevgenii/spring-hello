@@ -2,6 +2,7 @@ package net.proselyte.springhellotutorial;
 
 
 public class SpringByeWorld {
+    private SpringByeWorldChecker springByeWorldChecker;
     private String helloMessage;
     private String byeMessage;
 
@@ -9,16 +10,32 @@ public class SpringByeWorld {
         this.helloMessage = helloMessage;
     }
 
-    public void getHelloMessage() {
-        System.out.println("Hello message from bye: " + helloMessage);
+    public String getHelloMessage() {
+        return helloMessage;
     }
 
     public void setByeMessage(String byeMessage) {
         this.byeMessage = byeMessage;
     }
 
-    public void getByeMessage() {
-        System.out.println("Bye message from bye: " + byeMessage);
+    public String getByeMessage() {
+        return byeMessage;
+    }
+
+    public SpringByeWorldChecker getSpringByeWorldChecker(){
+        return springByeWorldChecker;
+    }
+
+    public void setSpringByeWorldChecker(SpringByeWorldChecker springByeWorldChecker){
+        this.springByeWorldChecker = springByeWorldChecker;
+        System.out.println("We've just set springByeWorld using setter.");
+    }
+
+    /**
+     * Проверка springByeWorld через springByeWorldChecker
+     */
+    public void springByeWorldCheck(){
+        springByeWorldChecker.checkKozanaga(helloMessage, byeMessage);
     }
 
     /**

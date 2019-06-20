@@ -22,6 +22,9 @@
           class="net.proselyte.springhellotutorial.SpringByeWorld"
           scope="prototype"
           parent="springHelloWorld">
+        <property name="SpringByeWorldChecker">
+            <bean class="net.proselyte.springhellotutorial.SpringByeWorldChecker"/>
+        </property>
     </bean>
 
 

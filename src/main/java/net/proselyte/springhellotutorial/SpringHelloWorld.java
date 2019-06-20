@@ -7,8 +7,8 @@ public class SpringHelloWorld {
         this.helloMessage = helloMessage;
     }
 
-    public void getHelloMessage() {
-        System.out.println("Hello message: " + helloMessage);
+    public String getHelloMessage() {
+        return helloMessage;
     }
 
     /**
