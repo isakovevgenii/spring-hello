@@ -1,6 +1,4 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!---Некая связующая смесь соединяет все компоненты программы в один исправный механизм.-->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -10,10 +8,22 @@
           default-init-method="beanInit"
           default-destroy-method="beanDestroy">
 
+    <!--singleton определяет один единственный бин для каждого контейнера Spring IoC.-->
     <bean id="springHelloWorld"
-          scope="singleton"
-          class="net.proselyte.springhellotutorial.SpringHelloWorld">
+          class="net.proselyte.springhellotutorial.SpringHelloWorld"
+          scope="singleton">
     </bean>
+
+    <!--
+    springByeWorld - бин-потомок springHelloWorldа.
+    prototype Позволяет иметь любое количество экземпляров бина.
+    -->
+    <bean id="springByeWorld"
+          class="net.proselyte.springhellotutorial.SpringByeWorld"
+          scope="prototype"
+          parent="springHelloWorld">
+    </bean>
+
 
     <bean class="net.proselyte.springhellotutorial.BeanPostProcessorHello"/>
 

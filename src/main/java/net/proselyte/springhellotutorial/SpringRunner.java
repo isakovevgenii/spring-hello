@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Здесь мы в первую очередь создаём контекст используя API ClassPathXmlApplicationContext().
- * Это API загружает конфигурационный файл “spring-hello-bean.xml” и
+ * Это API загружает конфигурационный файл “spring-hello-bye-bean.xml” и
  * создаёт и инициализирует все бины внутри этого файла.
  * Далее мы используем метод getBean() этого контекста.
  * Этот метод принимает в качестве аргумента id бина.
@@ -22,5 +22,13 @@ public class SpringRunner {
 
         SpringHelloWorld oneMoreSpringHelloWorld = (SpringHelloWorld) context.getBean("springHelloWorld");
         springHelloWorld.getHelloMessage();
+
+        SpringByeWorld springByeWorld = (SpringByeWorld) context.getBean("springByeWorld");
+        springByeWorld.setHelloMessage("koza");
+        springByeWorld.setByeMessage("naga");
+        springByeWorld.getHelloMessage();
+        springByeWorld.getByeMessage();
+
+        context.registerShutdownHook();
     }
 }

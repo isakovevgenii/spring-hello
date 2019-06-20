@@ -5,6 +5,14 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Выполняется перед инициализацией и после уничтожения экземпляров бина
+ *
+ * Данный интерфейс работает с экземплярами бинов,
+ * а это означает, что Spring IoC создаёт экземпляр бина,
+ * а затем BeanPostProcessor с ним работает.
+ *
+ * ApplicationContext автоматически обнаруживает любые бины,
+ * с реализацией BeanPostProcessor и помечает их как “post-processors” для того,
+ * чтобы создать их определённым способом.
  */
 public class BeanPostProcessorHello implements BeanPostProcessor {
 
